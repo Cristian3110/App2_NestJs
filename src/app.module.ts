@@ -7,7 +7,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [
-    UsersModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -15,9 +14,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'root',
       password: 'Guarenas852456+',
       database: 'nestdb',
-      entities: [__dirname + '/**/*.entity{.ts, .js}'],
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
