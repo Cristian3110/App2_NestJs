@@ -42,6 +42,7 @@ export class UsersService {
       where: {
         id,
       },
+      relations: ['posts'],
     });
 
     if (!userFound) {
